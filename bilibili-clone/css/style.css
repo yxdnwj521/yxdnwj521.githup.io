@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    background: #f1f2f3;
+}
+
+/* 顶部导航栏整体样式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #00a1d6;
+    color: white;
+    height: 64px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo样式 */
+.logo {
+    width: 100px; /* 调整Logo大小 */
+    height: auto; /* 自动高度 */
+    margin-right: 30px;
+}
+
+/* 导航链接样式 */
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    list-style: none;
+    padding-left: 0;
+}
+
+.main-nav a {
+    color: #18191c;
+    text-decoration: none;
+    padding: 10px 15px; /* 增加内边距 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    transition: color 0.3s;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: #00aeec;
+    background-color: #0094d8; /* 悬停和激活状态的背景颜色 */
+    border-radius: 5px; /* 圆角边框 */
+}
+
+/* 搜索框样式 */
+.search-box {
+    position: relative; /* 相对定位 */
+    width: 300px; /* 宽度 */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-box input {
+    width: 100%; /* 输入框占满整个搜索框 */
+    padding: 8px 10px; /* 内边距 */
+    border: none; /* 无边框 */
+    border-radius: 20px; /* 圆角 */
+    font-size: 14px; /* 字体大小 */
+}
+
+.search-btn {
+    position: absolute; /* 绝对定位 */
+    right: 5px; /* 右侧位置 */
+    top: 50%; /* 顶部位置 */
+    transform: translateY(-50%); /* 垂直居中 */
+    background: none; /* 无背景 */
+    border: none; /* 无边框 */
+    cursor: pointer; /* 鼠标样式 */
+    padding: 8px 12px;
+    background-color: #00aeec;
+    color: white;
+}
+
+/* 用户中心样式 */
+.user-center {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    margin-left: 20px; /* 左边距 */
+}
+
+.user-center a {
+    display: inline-block;
+    margin: 0 10px; /* 间距 */
+    color: white; /* 字体颜色 */
+    font-size: 14px; /* 字体大小 */
+}
+
+/* 分类导航 */
+.category-nav {
+    margin-top: 64px;
+    background: #fff;
+    padding: 0 24px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e3e5e7;
+}
+
+.category-left {
+    display: flex;
+    margin-right: 40px;
+}
+
+.category-item {
+    padding: 0 16px;
+    color: #18191c;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 46px;
+    border-bottom: 2px solid transparent;
+}
+
+.category-item.active {
+    color: #00aeec;
+    border-bottom-color: #00aeec;
+}
+
+.category-list {
+    display: flex;
+    gap: 24px;
+}
+
+.category-list a {
+    color: #18191c;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 视频网格 */
+main {
+    padding: 20px 24px;
+    margin-top: 48px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 180px;
+    background-color: #000;
+    position: relative;
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.1);
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.video-info {
+    padding: 10px;
+}
+
+.video-info h3 {
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.video-stats {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.video-stats span {
+    margin-right: 12px;
+}
+
+/* 假设有一个背景图片需要修改路径 */
+.background {
+    background-image: url('../images/background.jpg'); /* 使用相对路径 */
+}
+
+/* 轮播图样式 */
+.carousel {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-top: 64px;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out;
+}
